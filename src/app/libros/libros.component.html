@@ -1,3 +1,28 @@
-<p>
-  libros works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 p-4" *ngFor = "let item of libroList">
+      <div class="card">
+        <img [src]="item.imagePath" alt="" class="img-card-top w-100" >
+        <div class="card-body">
+          <h5 class="card-title">{{item.titulo}}</h5>
+          <p class="card-text">{{item.sipnosis}}</p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">{{item.autor}}</li>
+          <li class="list-group-item">{{item.cantPaginas}}</li>
+          <li class="list-group-item">{{item.status}}</li>
+          <li class="list-group-item">{{item.fechaCreacion | date:'dd/MM/yyyy'}}</li>
+          <li class="list-group-item">{{item.fechaPublicacion | date:'dd/MM/yyyy'}}</li>
+          <li class="list-group-item">{{item.cantPaginas}}</li>
+          <li class="list-group-item">{{item.status}}</li>
+        </ul>
+        <div class="card-body">
+          <a class="btn" (click)="editar(item)" >
+            <i class="fa fa-pencil-square-o"></i>Editar</a>
+          <a class="card-link">
+            <i class="fa fa-trash-square-o"></i>Eliminar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
